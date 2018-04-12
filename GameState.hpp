@@ -10,12 +10,10 @@ public:
 	GameState();
 	~GameState();
 
-	virtual void Update();
-	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+	virtual void Update(float dt);
 
 protected:
-
-private:
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 
 #endif

@@ -3,6 +3,9 @@
 GameManager::GameManager() :
 	window(sf::VideoMode(500, 500), "Ball Breaker")
 {
+	// Add level to game state
+	CurrentLevel = new Level();
+	GSM.AddGameState(CurrentLevel);
 }
 
 GameManager::~GameManager()
@@ -55,10 +58,8 @@ void GameManager::HandleInput()
 
 void GameManager::Update()
 {
-	std::cout << "Update" << std::endl;
-
 	// Update the current state
-	GSM.GetCurrentGameState()->Update();
+	GSM.GetCurrentGameState()->Update(DeltaTime.asSeconds());
 }
 
 void GameManager::Draw()
@@ -67,6 +68,5 @@ void GameManager::Draw()
 
 	// Draw the current game state
 	window.draw(*GSM.GetCurrentGameState());
-	
 	window.display();
 }

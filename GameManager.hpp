@@ -7,6 +7,7 @@
 
 #include "GameState.hpp"
 #include "GameStateManager.hpp"
+#include "Level.hpp"
 
 class GameManager
 {
@@ -39,6 +40,7 @@ private:
 
 	// Managers
 	GameStateManager GSM;
+	Level* CurrentLevel;
 };
 
 #endif

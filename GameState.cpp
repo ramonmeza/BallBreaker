@@ -10,7 +10,7 @@ GameState::~GameState()
 
 }
 
-void GameState::Update()
+void GameState::Update(float dt)
 {
 
 }
