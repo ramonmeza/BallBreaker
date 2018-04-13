@@ -4,7 +4,7 @@ GameManager::GameManager() :
 	window(sf::VideoMode(500, 500), "Ball Breaker")
 {
 	// Add level to game state
-	CurrentLevel = new Level();
+	CurrentLevel = new Level(window);
 	GSM.AddGameState(CurrentLevel);
 }
 

@@ -1,3 +1,11 @@
+/*
+
+Class name: GameState
+
+Description: The base class for all drawable screens.
+
+*/
+
 #ifndef GAMESTATE_HPP
 #define GAMESTATE_HPP
 #pragma once

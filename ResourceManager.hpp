@@ -1,3 +1,13 @@
+/*
+
+Class name: ResourceManager
+
+Description: Holds commonly used resources, like textures and sounds. 
+			 Each pool can be accessed to make loading and reusing
+			 resources easier and more efficient.
+
+*/
+
 #ifndef RESOURCEMANAGER_HPP
 #define RESOURCEMANAGER_HPP
 #pragma once

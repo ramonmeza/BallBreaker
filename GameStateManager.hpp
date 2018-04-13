@@ -1,7 +1,11 @@
 /*
-	Class name: GameStateManager
 
-	Description: Keeps track of which state is the current state.
+Class name: GameStateManager
+
+Description: Holds GameState objects and can swap between them.
+			 Basically a glorified stack, whichever GameState object
+			 is on the top of the stack is drawn.
+
 */
 
 #ifndef GAMESTATEMANAGER_HPP

@@ -1,3 +1,11 @@
+/*
+
+Class name: GameManager
+
+Description: Directs the game. Handles loading in different levels and screens.
+
+*/
+
 #ifndef GAMEMANAGER_HPP
 #define GAMEMANAGER_HPP
 #pragma once

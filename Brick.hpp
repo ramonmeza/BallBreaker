@@ -1,3 +1,11 @@
+/*
+
+Class name: Brick
+
+Description: Represents a brick in the game.
+
+*/
+
 #ifndef BRICK_HPP
 #define BRICK_HPP
 #pragma once
