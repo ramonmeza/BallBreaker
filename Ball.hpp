@@ -1,15 +1,15 @@
-#ifndef BRICK_HPP
-#define BRICK_HPP
+#ifndef BALL_HPP
+#define BALL_HPP
 #pragma once
 
 #include <SFML/Graphics.hpp>
 
-class Brick : public sf::Drawable
+class Ball : public sf::Drawable
 {
 public:
-	Brick();
-	Brick(sf::Texture* tex, sf::Color color = sf::Color::White);
-	~Brick();
+	Ball();
+	Ball(sf::Texture* tex, sf::Color color = sf::Color::White);
+	~Ball();
 
 protected:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;

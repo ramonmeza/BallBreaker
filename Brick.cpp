@@ -4,14 +4,14 @@
 
 Brick::Brick()
 {
-	texture.loadFromFile("images/brick_embossed.png");
-	sprite.setTexture(texture);
+	texture->loadFromFile("images/brick_embossed.png");
+	sprite.setTexture(*texture);
 }
 
-Brick::Brick(sf::Color color)
+Brick::Brick(sf::Texture* tex, sf::Color color)
 {
-	texture.loadFromFile("images/brick_embossed.png");
-	sprite.setTexture(texture);
+	texture = tex;
+	sprite.setTexture(*texture);
 	sprite.setColor(color);
 	sprite.setPosition(10, 10);
 }

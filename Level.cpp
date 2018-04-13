@@ -2,7 +2,11 @@
 
 Level::Level()
 {
-	bricks.push_back(new Brick(sf::Color::Red));
+	sf::Texture* tex = new sf::Texture();
+	tex->loadFromFile("images/brick_embossed.png");
+	RM.AddTexture("brick_embossed", tex);
+
+	bricks.push_back(new Brick(RM.GetTexture("brick_embossed"), sf::Color::Red));
 }
 
 Level::~Level()
