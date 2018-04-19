@@ -21,7 +21,7 @@ public:
 	virtual ~GameObject() {}
 	
 	virtual void Load() = 0;
-	virtual void Update(float delta) {}
+	virtual void Update() {}
 
 protected:
 	virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const {}

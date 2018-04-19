@@ -11,7 +11,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "ResourceManager.hpp"
+#include "GameStateManager.hpp"
 
 class Game
 {
@@ -19,25 +19,31 @@ class Game
 public:
 	~Game();
 
+	void Load();
+	void Run();
+
 	sf::RenderWindow* GetWindow();
-	ResourceManager* GetResources();
+	sf::Time* GetDeltaTime();
+	GameState* GetCurrentGameState();
 
 private:
-	void LoadTextures();
+	// Game state manager
+	GameStateManager StateManager;
 
-	// Holds all of the resources
-	ResourceManager resources;
+	// Game functions
+	void HandleInput();
+	void Update();
+	void Draw();
 
 	// Window properties
 	sf::RenderWindow window;
+	sf::Time DeltaTime;
 
 /* Singleton */
 public:
-	// Static access method
 	static Game* GetGame();
 
 private:
-	// Singleton
 	Game();
 	static Game* instance;
 };

@@ -22,9 +22,11 @@ public:
 	ResourceManager();
 	~ResourceManager();
 
+	// Adding resources
 	void AddTexture(std::string name, sf::Texture* resource);
 	void AddSoundFX(std::string name, sf::SoundBuffer* resource);
-
+	
+	// Get resources
 	sf::Texture* GetTexture(std::string name);
 	sf::SoundBuffer* GetSoundFX(std::string name);
 

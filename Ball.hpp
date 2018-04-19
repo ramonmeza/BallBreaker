@@ -21,10 +21,10 @@ public:
 	void Load();
 
 	// Update the ball (position)
-	void Update(float dt);
+	void Update();
 
 protected:
-	virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
+	virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
 
 private:
 	sf::Sprite sprite;
