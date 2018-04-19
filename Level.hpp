@@ -1,4 +1,9 @@
 /*
+				Level.hpp
+
+	Description:
+		Level is a GameState that represents the actual game.
+		Level holds a ball that bounces along with bricks.
 */
 #ifndef LEVEL_HPP
 #define LEVEL_HPP

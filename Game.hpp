@@ -15,7 +15,6 @@
 
 class Game
 {
-
 public:
 	~Game();
 
@@ -24,6 +23,7 @@ public:
 
 	sf::RenderWindow* GetWindow();
 	sf::Time* GetDeltaTime();
+	float GetTimeStep();
 	GameState* GetCurrentGameState();
 
 private:
@@ -38,6 +38,7 @@ private:
 	// Window properties
 	sf::RenderWindow window;
 	sf::Time DeltaTime;
+	float TimeStep;
 
 /* Singleton */
 public:

@@ -22,8 +22,9 @@ void Level::LoadTextures()
 
 void Level::LoadObjects()
 {
+	std::cout << "Loading ball..." << std::endl;
 	Ball* ball = new Ball();
 	ball->Load();
+	ball->SetPosition(250.0f, 200.f);
 	AddGameObjectToPool(GameObjectType::BALL, ball);
-	std::cout << "Loaded ball..." << std::endl;
 }

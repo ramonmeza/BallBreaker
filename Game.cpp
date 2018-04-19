@@ -7,11 +7,11 @@ Game* Game::instance = nullptr;
 Game::Game() :
 	window(sf::VideoMode(500, 500), "Brick Breaker")
 {
+	TimeStep = 1.0f / 60.0f;
 }
 
 Game::~Game()
 {
-
 }
 
 void Game::Load()
@@ -26,6 +26,7 @@ void Game::Run()
 	Load();
 
 	sf::Clock DeltaClock;
+	float elapsed = 0.0f;
 
 	while (window.isOpen())
 	{
@@ -39,8 +40,12 @@ void Game::Run()
 				HandleInput();
 		}
 
-		Update();
-		
+		if (elapsed >= TimeStep)
+		{
+			Update();
+			elapsed = 0.0f;
+		}
+
 		window.clear();
 
 		Draw();
@@ -49,6 +54,7 @@ void Game::Run()
 
 		// Update delta time
 		DeltaTime = DeltaClock.restart();
+		elapsed += DeltaTime.asSeconds();
 	}
 }
 
@@ -84,6 +90,11 @@ sf::RenderWindow* Game::GetWindow()
 sf::Time* Game::GetDeltaTime()
 {
 	return &DeltaTime;
+}
+
+float Game::GetTimeStep()
+{
+	return TimeStep;
 }
 
 GameState* Game::GetCurrentGameState()
