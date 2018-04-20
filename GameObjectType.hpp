@@ -11,7 +11,8 @@
 enum GameObjectType
 {
 	BALL,
-	BRICK
+	BRICK,
+	PADDLE
 };
 
 #endif

@@ -23,14 +23,11 @@ public:
 	// Update the ball (position)
 	void Update();
 
+	// Set position
 	void SetPosition(sf::Vector2f pos);
 	void SetPosition(float x, float y);
 
-protected:
-	virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
-
 private:
-	sf::Sprite sprite;
 	sf::Vector2f velocity;
 
 	void CheckForBounce();

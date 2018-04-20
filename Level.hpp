@@ -10,7 +10,6 @@
 #pragma once
 
 #include "GameState.hpp"
-#include "Ball.hpp"
 
 class Level : public GameState
 {

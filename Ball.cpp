@@ -3,7 +3,7 @@
 
 Ball::Ball()
 {
-	velocity = sf::Vector2f(100.0f, 500.0f);
+	velocity = sf::Vector2f(500.0f, 500.0f);
 }
 
 Ball::~Ball()
@@ -56,9 +56,4 @@ void Ball::SetPosition(sf::Vector2f pos)
 void Ball::SetPosition(float x, float y)
 {
 	SetPosition(sf::Vector2f(x, y));
-}
-
-void Ball::draw(sf::RenderTarget &target, sf::RenderStates states) const
-{
-	target.draw(sprite);
 }

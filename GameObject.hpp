@@ -24,7 +24,12 @@ public:
 	virtual void Update() {}
 
 protected:
-	virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const {}
+	sf::Sprite sprite;
+
+	virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const
+	{
+		target.draw(sprite);
+	}
 };
 
 #endif
