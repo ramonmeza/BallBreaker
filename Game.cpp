@@ -1,5 +1,6 @@
 #include "Game.hpp"
 #include "Level.hpp"
+#include "Menu.hpp"
 
 // Singleton
 Game* Game::instance = nullptr;
@@ -8,6 +9,7 @@ Game::Game() :
 	window(sf::VideoMode(500, 500), "Brick Breaker")
 {
 	TimeStep = 1.0f / 60.0f;
+	IsPaused = false;
 }
 
 Game::~Game()
@@ -36,8 +38,8 @@ void Game::Run()
 			if (event.type == sf::Event::Closed)
 				window.close();
 
-			if(event.type == sf::Event::KeyPressed)
-				HandleInput();
+			if(event.type == sf::Event::KeyReleased)
+				HandleInput(event.key.code);
 		}
 
 		if (elapsed >= TimeStep)
@@ -58,8 +60,30 @@ void Game::Run()
 	}
 }
 
-void Game::HandleInput()
+void Game::HandleInput(sf::Keyboard::Key key)
 {
+	switch (key)
+	{
+	case sf::Keyboard::Escape:
+		// Switch paused bool
+		IsPaused = !IsPaused;
+
+		if (IsPaused)
+		{
+			std::cout << "Game paused..." << std::endl;
+			Menu* pause = new Menu();
+			pause->AddText("Hi", sf::Vector2f(100.0f, 100.0f));
+			AddGameState(pause);
+		}
+		else
+		{
+			std::cout << "Game unpaused..." << std::endl;
+			RemoveGameState();
+		}
+		break;
+	default:
+		break;
+	}
 }
 
 void Game::Update()
@@ -70,6 +94,16 @@ void Game::Update()
 void Game::Draw()
 {
 	window.draw(*StateManager.GetCurrentGameState());
+}
+
+void Game::AddGameState(GameState* state)
+{
+	StateManager.AddGameState(state);
+}
+
+void Game::RemoveGameState()
+{
+	StateManager.RemoveGameState();
 }
 
 Game* Game::GetGame()

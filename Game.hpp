@@ -21,17 +21,23 @@ public:
 	void Load();
 	void Run();
 
+	void AddGameState(GameState* state);
+	void RemoveGameState();
+
+	// Accessors
 	sf::RenderWindow* GetWindow();
 	sf::Time* GetDeltaTime();
 	float GetTimeStep();
 	GameState* GetCurrentGameState();
 
 private:
+	bool IsPaused;
+
 	// Game state manager
 	GameStateManager StateManager;
 
 	// Game functions
-	void HandleInput();
+	void HandleInput(sf::Keyboard::Key key);
 	void Update();
 	void Draw();
 
